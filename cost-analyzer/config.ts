@@ -16,6 +16,7 @@ export interface Config {
     lambda: boolean;
     rds: boolean;
     elb: boolean;
+    dynamodb: boolean;
   };
 }
 
@@ -37,6 +38,7 @@ export const DEFAULT_CONFIG: Config = {
     lambda: true,
     rds: true,
     elb: true,
+    dynamodb: true,
   },
 };
 

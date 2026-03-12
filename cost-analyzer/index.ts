@@ -11,6 +11,7 @@ import { S3Analyzer } from "./analyzers/s3.js";
 import { LambdaAnalyzer } from "./analyzers/lambda.js";
 import { RDSAnalyzer } from "./analyzers/rds.js";
 import { ELBAnalyzer } from "./analyzers/elb.js";
+import { DynamoDBAnalyzer } from "./analyzers/dynamodb.js";
 
 async function main() {
   console.log("╔═══════════════════════════════════════════════════════════════════════╗");
@@ -46,6 +47,9 @@ async function main() {
   }
   if (config.analyzers.elb) {
     analyzers.push(new ELBAnalyzer());
+  }
+  if (config.analyzers.dynamodb) {
+    analyzers.push(new DynamoDBAnalyzer());
   }
 
   console.log(`Running ${analyzers.length} analyzer(s)...`);

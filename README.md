@@ -13,6 +13,7 @@ A comprehensive tool that analyzes your AWS account to identify cost optimizatio
 - **Lambda**: Unused functions, over-provisioned memory/timeout
 - **RDS**: Idle databases, old manual snapshots, stopped instances, over-provisioned instances
 - **ELB**: Load balancers without targets, unused load balancers, deprecated Classic LBs
+- **DynamoDB**: Unused tables, over-provisioned capacity, unused GSIs, billing mode optimization
 
 ### What It Provides
 
@@ -114,6 +115,7 @@ The tool requires read-only permissions for:
 - Lambda: `lambda:ListFunctions`, `lambda:GetFunction`
 - RDS: `rds:DescribeDBInstances`, `rds:DescribeDBSnapshots`
 - ELB: `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeTargetGroups`, `elasticloadbalancing:DescribeTargetHealth`
+- DynamoDB: `dynamodb:ListTables`, `dynamodb:DescribeTable`
 
 ## Cost Estimates
 
